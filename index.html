@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b0a09" />
+<meta name="description" content="2026 공공협력원 송년회 초대장 · 2026년 12월 18일 오후 5시 · 646테라스" />
+<title>2026 공공협력원 송년회 | Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0a09;--ink:#10100e;--gold:#d2b177;--bright:#f4dca5;--muted:#aca292;--white:#f4ede0;--line:rgba(218,182,116,.23)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit;text-decoration:none}::selection{background:#bf9a5d;color:#100f0c}
+.noise{pointer-events:none;position:fixed;inset:0;z-index:30;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.77' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.38' filter='url(%23n)'/%3E%3C/svg%3E")}
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 44%,#302619 0%,#14110d 38%,#080807 78%);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:opacity .7s,visibility .7s}
+#intro.done{opacity:0;visibility:hidden;pointer-events:none}.intro-kicker{position:absolute;top:max(7vh,35px);font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:#cfb78b;text-align:center}.intro-hint{position:absolute;bottom:7vh;font-size:11px;letter-spacing:.23em;color:#ac9571;text-align:center;animation:pulse 2.3s infinite}
+.envelope-button{position:relative;display:block;width:min(82vw,480px);aspect-ratio:1.55;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 32px 34px rgba(0,0,0,.55));perspective:1200px;outline-offset:14px}
+.envelope{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.14,1)}.envelope-button:hover .envelope{transform:translateY(-7px)}.env-body{position:absolute;inset:0;background:linear-gradient(145deg,#44351f,#937347 47%,#513d23);border:1px solid #c4a576;box-shadow:inset 0 0 0 2px #302619,inset 0 0 35px #2e2113}
+.env-letter{position:absolute;left:12%;right:12%;top:17%;height:77%;background:linear-gradient(#efe0bf,#cbb88f);border:1px solid #e9d5a7;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:12%;gap:8px;color:#45331b;transition:transform 1s cubic-bezier(.18,.72,.2,1);z-index:2}.env-letter span{font-size:9px;letter-spacing:.32em}.env-letter strong{font-family:'Noto Serif KR',serif;font-size:clamp(14px,3vw,22px);font-weight:500}
+.env-left,.env-right,.env-bottom{position:absolute;inset:0;z-index:3;pointer-events:none}.env-left{clip-path:polygon(0 0,53% 51%,0 100%);background:linear-gradient(70deg,#5e472b,#b1925d)}.env-right{clip-path:polygon(100% 0,47% 51%,100% 100%);background:linear-gradient(-70deg,#594127,#b79560)}.env-bottom{clip-path:polygon(0 100%,50% 41%,100% 100%);background:linear-gradient(0deg,#997649,#60482a)}.env-flap{position:absolute;left:0;right:0;top:0;height:55%;background:linear-gradient(145deg,#d6b57e,#7c5b32 70%);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;backface-visibility:hidden;z-index:5;transition:transform .95s cubic-bezier(.26,.64,.2,1);filter:drop-shadow(0 5px 3px rgba(0,0,0,.2))}.seal{position:absolute;z-index:6;left:50%;top:53%;transform:translate(-50%,-50%);height:62px;width:62px;border-radius:50%;display:grid;place-items:center;font-family:'Noto Serif KR',serif;font-size:24px;color:#f7e3bb;background:radial-gradient(circle at 32% 27%,#e2c384,#98703d 58%,#5c3f21);border:3px double #f0d5a3;box-shadow:0 4px 15px #2d1b0e, inset 0 0 0 4px #936d3c;transition:transform .5s,opacity .5s}.envelope-button.open .env-flap{transform:rotateX(180deg);z-index:1}.envelope-button.open .seal{opacity:0;transform:translate(-50%,-80%) scale(.55)}.envelope-button.open .env-letter{transform:translateY(-65%);transition-delay:.6s}.envelope-button.open .envelope{transform:translateY(20px)}
+#site{opacity:0;visibility:hidden}#site.ready{opacity:1;visibility:visible}#site.ready .hero .reveal{opacity:1}header{position:absolute;z-index:11;width:100%;top:0;padding:28px clamp(22px,5vw,82px);display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Noto Serif KR',serif;font-size:14px;letter-spacing:.12em;color:#f2ddb5}.header-right{font-size:10px;letter-spacing:.25em;color:#c0a77e}.hero{height:min(960px,100svh);min-height:680px;position:relative;isolation:isolate;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#3f3020 0%,#19150f 33%,#0b0a09 70%)}.hero:before,.hero:after{content:'';position:absolute;inset:-22%;z-index:-1;pointer-events:none}.hero:before{background:conic-gradient(from 110deg at 50% 47%,transparent 0deg,rgba(210,163,90,.11) 35deg,transparent 65deg,transparent 210deg,rgba(246,200,116,.13) 246deg,transparent 280deg);animation:rotate 30s linear infinite}.hero:after{inset:9%;border:1px solid rgba(219,177,102,.15);border-radius:50%;transform:scaleX(.83)}.hero-content{padding:90px 18px 80px;position:relative;z-index:3}.eyebrow{font-size:11px;letter-spacing:.48em;color:var(--bright);font-weight:500}.short-rule{width:42px;height:1px;margin:26px auto;background:var(--gold)}h1,h2,h3,p{margin:0}.hero-year{font-family:Georgia,serif;font-size:clamp(74px,17vw,220px);font-weight:400;line-height:1;letter-spacing:-.055em;color:transparent;background:linear-gradient(160deg,#fff6de 1%,#d4a761 45%,#6f502b 81%,#e9ce96);-webkit-background-clip:text;background-clip:text;text-shadow:0 12px 56px rgba(255,188,86,.08)}.hero h1{font-family:'Noto Serif KR',serif;font-weight:400;font-size:clamp(25px,4.7vw,58px);letter-spacing:.16em;margin-top:13px}.hero-en{font-size:clamp(10px,1.3vw,14px);letter-spacing:.45em;color:#bc9e6c;margin-top:23px}.hero-date{margin-top:45px;color:#d7c7a8;line-height:1.9;font-size:clamp(18px,2.35vw,27px);letter-spacing:.08em}.hero-date b{font-weight:500;color:#fff1d0}.hero-scroll{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;color:#b89e70;display:flex;align-items:center;flex-direction:column;gap:13px}.hero-scroll:after{content:'';width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drift 2s infinite}.sparkles{position:absolute;inset:0;overflow:hidden;pointer-events:none}.particle{position:absolute;border-radius:50%;background:#f3d399;box-shadow:0 0 11px 2px #b58a47;opacity:.5}
+.section{position:relative;padding:clamp(100px,16vw,185px) 22px}.container{width:min(1050px,100%);margin:auto}.center{text-align:center}.section-label{font-size:11px;letter-spacing:.36em;color:var(--gold);margin-bottom:28px}.section-title{font-family:'Noto Serif KR',serif;font-size:clamp(28px,5vw,55px);font-weight:400;line-height:1.65;letter-spacing:-.03em}.section-copy{font-family:'Noto Serif KR',serif;font-size:clamp(14px,1.8vw,17px);font-weight:300;line-height:2.3;color:#c3b9a9;margin:25px auto 0;max-width:650px}.invitation{background:#10100e}.gold-line{height:1px;width:min(600px,75vw);margin:56px auto;background:linear-gradient(90deg,transparent,#a78a58,transparent)}.invitation-monogram{font-family:Georgia,serif;color:#bf9d67;font-size:48px;margin-bottom:24px}.info{background:radial-gradient(ellipse at 50% 35%,#2c241a 0%,#0c0b09 69%);overflow:hidden}.info:before{content:'';position:absolute;inset:65px 7%;border:1px solid rgba(210,175,112,.12);pointer-events:none}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);margin-top:72px;text-align:left}.info-item{padding:0 0 28px;border-bottom:1px solid var(--line)}.info-item .num{color:#93764e;font-family:Georgia,serif;font-size:17px}.info-item .key{color:#af9a79;font-size:11px;letter-spacing:.27em;margin:20px 0 13px}.info-item .value{font-family:'Noto Serif KR',serif;font-size:clamp(25px,3.6vw,40px);font-weight:400;line-height:1.6}.info-item .sub{color:#d7c7a8;font-size:clamp(18px,2.2vw,24px);margin-top:8px}.info-item .sub.note{font-size:12px;color:#b9ab95}.closing{background:#11100e;text-align:center;padding-bottom:160px}.closing .ornament{color:#b9955d;font-size:40px;margin-bottom:28px}.closing-title{font-family:'Noto Serif KR',serif;font-weight:400;font-size:clamp(28px,5.5vw,60px);line-height:1.6}.closing-copy{margin:30px auto 0;color:#bcb2a1;font-family:'Noto Serif KR',serif;line-height:2.2;font-size:15px}.outline-button{margin-top:48px;display:inline-flex;align-items:center;justify-content:center;min-height:55px;padding:0 40px;border:1px solid #b9965f;background:linear-gradient(110deg,rgba(166,124,61,.12),rgba(234,196,128,.04));color:#f5e1b7;font-size:11px;letter-spacing:.2em;cursor:pointer;transition:background .3s,transform .3s}.outline-button:hover{background:#b6945f;color:#0e0d0b;transform:translateY(-3px)}footer{padding:28px 22px 42px;text-align:center;border-top:1px solid var(--line);color:#806f55;font-size:10px;letter-spacing:.18em}.reveal-item{opacity:1}.reveal{opacity:0}.fallback .reveal,.fallback .reveal-item{opacity:1!important;transform:none!important}
+@keyframes pulse{50%{opacity:.4}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes drift{50%{transform:translateY(12px);opacity:.5}}@media(max-width:700px){header{padding:23px 24px}.brand{font-size:12px}.header-right{font-size:8px;letter-spacing:.15em}.hero{min-height:640px;height:100svh}.hero h1{letter-spacing:.08em}.hero-en{letter-spacing:.24em}.eyebrow{letter-spacing:.28em}.info-grid{grid-template-columns:1fr;gap:38px;margin-top:55px}.section{padding:100px 25px}.info:before{inset:38px 13px}.closing{padding-bottom:115px}.seal{height:48px;width:48px;font-size:18px}.intro-kicker{letter-spacing:.22em}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* RSVP: inherits the invitation’s black-and-gold visual language */
+.rsvp{background:radial-gradient(ellipse at 50% 0%,#302517 0%,#13110e 44%,#0b0a09 100%);border-top:1px solid var(--line)}
+.rsvp-card{max-width:610px;margin:50px auto 0;padding:clamp(24px,5vw,48px);border:1px solid rgba(214,177,107,.42);background:linear-gradient(145deg,rgba(92,67,35,.18),rgba(15,13,11,.88));box-shadow:0 28px 85px rgba(0,0,0,.2)}
+.rsvp-field{margin-bottom:24px}.rsvp-field label,.rsvp-legend{display:block;color:#d9c197;font-size:12px;letter-spacing:.12em;margin-bottom:12px}.rsvp-field input{width:100%;padding:16px 15px;border:1px solid #756143;background:rgba(10,9,8,.6);border-radius:0;color:#fff2d8;font-size:16px;outline:none}.rsvp-field input:focus{border-color:#f1d093;box-shadow:0 0 0 2px rgba(240,201,125,.15)}.rsvp-field input::placeholder{color:#827664}.rsvp-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rsvp-option{cursor:pointer;position:relative}.rsvp-option input{position:absolute;opacity:0;width:1px;height:1px}.rsvp-option span{display:block;text-align:center;padding:17px 10px;border:1px solid #756143;color:#c8b79c;font-size:14px;transition:.25s}.rsvp-option input:checked+span{border-color:#f0c981;color:#fff3d8;background:rgba(185,138,65,.2)}.rsvp-option input:focus-visible+span{outline:2px solid #f0c981;outline-offset:3px}.rsvp-submit{margin-top:12px;width:100%;padding:19px;background:linear-gradient(115deg,#a87d43,#e2bf7f,#a87d43);color:#17100a;border:0;cursor:pointer;letter-spacing:.19em;font-size:13px;font-weight:700;transition:filter .25s,transform .25s}.rsvp-submit:hover:not(:disabled){filter:brightness(1.12);transform:translateY(-2px)}.rsvp-submit:disabled{opacity:.65;cursor:not-allowed}.rsvp-note{color:#a99c87;font-size:12px;line-height:1.9;margin-top:19px;text-align:center}.rsvp-status{min-height:22px;text-align:center;color:#f0d397;font-size:13px;line-height:1.8;margin-top:16px}.rsvp-privacy{color:#b8aa95;font-size:11px;line-height:1.8;margin-top:16px}.rsvp-preview{border:1px solid rgba(220,176,101,.26);padding:12px 16px;text-align:center;color:#e6ca97;background:rgba(225,177,100,.07);font-size:12px;line-height:1.8;margin-bottom:26px}
+@media(max-width:700px){.rsvp-card{margin-top:36px}.rsvp-options{gap:8px}.rsvp-option span{font-size:13px;padding:15px 5px}}
+
+/* Companion guest controls */
+.rsvp-field select{width:100%;padding:16px 15px;border:1px solid #756143;border-radius:0;background:#17130f;color:#fff2d8;font-size:16px;outline:none;appearance:auto;color-scheme:dark}
+.rsvp-field select:focus{border-color:#f1d093;box-shadow:0 0 0 2px rgba(240,201,125,.15)}
+.rsvp-companion-fields{display:grid;gap:12px;margin-top:16px}.rsvp-companion-fields label{font-size:12px;color:#d9c197;display:block;margin-bottom:8px}.rsvp-companion-fields input{margin:0}.rsvp-field[hidden]{display:none!important}
+.companion-group{min-width:0;border:1px solid rgba(214,177,107,.29);padding:18px 15px 5px;margin:5px 0 15px;text-align:left}
+.companion-group legend{color:#efd3a1;font-size:14px;letter-spacing:.08em;padding:0 8px}
+.companion-group>div{margin-bottom:17px}
+/* Floating RSVP launcher and accessible modal */
+.rsvp-float{position:fixed;right:clamp(16px,3vw,34px);bottom:clamp(18px,4vw,35px);z-index:70;display:none;align-items:center;gap:10px;border:1px solid #f4d99d;border-radius:100px;padding:16px 23px;color:#211609;background:linear-gradient(125deg,#ecd6a3,#b48847 55%,#f7e3b4);font-size:14px;font-weight:700;letter-spacing:.065em;box-shadow:0 8px 32px #0009,0 0 25px #b28b4d55;cursor:pointer;transition:transform .25s,box-shadow .25s;animation:floatGlow 3s ease-in-out infinite}
+.rsvp-float.show{display:flex}.rsvp-float:hover{transform:translateY(-4px);box-shadow:0 12px 40px #000b,0 0 32px #c99f5d99}.rsvp-float svg{width:18px;height:18px}
+@keyframes floatGlow{50%{box-shadow:0 9px 36px #0009,0 0 34px #d6ac6c8c}}
+.rsvp-open-button{margin-top:42px;min-width:220px}
+.rsvp-modal[hidden]{display:none!important}.rsvp-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(5,4,3,.83);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px)}
+.rsvp-dialog{position:relative;width:min(620px,100%);max-height:min(90dvh,800px);overflow-y:auto;overscroll-behavior:contain;border:1px solid #bc965e;background:radial-gradient(ellipse at top,#302519,#0e0c0a 75%);box-shadow:0 30px 100px #000d,0 0 60px #b68b4830;padding:clamp(22px,4vw,38px);scrollbar-color:#876c47 #15110d}
+.rsvp-dialog:before{content:'';position:absolute;inset:9px;border:1px solid #93704445;pointer-events:none}
+.rsvp-dialog h2{font-family:'Noto Serif KR',serif;font-weight:400;color:#f2d8a9;text-align:center;font-size:clamp(24px,4vw,34px);margin:9px 0 4px}.rsvp-dialog .modal-eyebrow{display:block;text-align:center;font-size:10px;letter-spacing:.35em;color:#c8a776;margin-top:9px}.rsvp-dialog .rsvp-card{margin:20px 0 0;padding:0;border:0;box-shadow:none;background:none;max-width:none}.rsvp-dialog .rsvp-note{font-size:11px}
+.rsvp-close{position:absolute;top:12px;right:13px;z-index:1;width:42px;height:42px;border:1px solid #b9955c70;border-radius:50%;background:#19140e;color:#f5dab0;cursor:pointer;font-size:24px;line-height:1}.rsvp-close:hover{background:#533b22}
+body.modal-open{overflow:hidden!important}
+@media(max-width:700px){.rsvp-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));padding:14px 18px;font-size:13px}.rsvp-modal{padding:10px}.rsvp-dialog{max-height:94dvh;padding:24px 20px}.rsvp-dialog .rsvp-card{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.rsvp-float{animation:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div id="intro" aria-label="초대장 봉투 오프닝">
+  <div class="intro-kicker">THE HONOR OF YOUR PRESENCE</div>
+  <button class="envelope-button" id="openEnvelope" type="button" aria-label="봉투를 열어 송년회 초대장 보기">
+    <span class="envelope">
+      <span class="env-body"></span>
+      <span class="env-letter"><span>YOU ARE CORDIALLY INVITED</span><strong>2026 송년회</strong></span>
+      <span class="env-left"></span><span class="env-right"></span><span class="env-bottom"></span><span class="env-flap"></span><span class="seal">邀</span>
+    </span>
+  </button>
+  <div class="intro-hint">TAP TO OPEN YOUR INVITATION</div>
+</div>
+<main id="site" aria-hidden="true">
+  <header><div class="brand">공공협력원</div><div class="header-right">2026 · PRIVATE INVITATION</div></header>
+  <section class="hero" id="top">
+    <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="eyebrow reveal">AN EVENING TO REMEMBER</div>
+      <div class="short-rule reveal"></div>
+      <div class="hero-year reveal">2026</div>
+      <h1 class="reveal">공공협력원 송년회</h1>
+      <div class="hero-en reveal">YEAR-END CELEBRATION</div>
+      <div class="hero-date reveal"><b>2026. 12. 18. FRI</b><br>오후 5시 · 646테라스</div>
+    </div>
+    <div class="hero-scroll">SCROLL TO EXPLORE</div>
+  </section>
+  <section class="section invitation" id="invitation"><div class="container center">
+    <div class="invitation-monogram reveal-item">✦</div>
+    <div class="section-label reveal-item">A SPECIAL INVITATION</div>
+    <h2 class="section-title reveal-item">한 해의 끝에서,<br>소중한 인연을 초대합니다.</h2>
+    <div class="gold-line reveal-item"></div>
+    <p class="section-copy reveal-item">2026년의 마지막을 함께 나누는 자리.<br>한 해 동안 보내주신 관심과 성원에 감사드리며,<br>따뜻한 만남의 시간에 여러분을 초대합니다.</p>
+  </div></section>
+  <section class="section info" id="details"><div class="container">
+    <div class="center"><div class="section-label reveal-item">EVENT DETAILS</div><h2 class="section-title reveal-item">The Evening</h2><p class="section-copy reveal-item">2026 공공협력원 송년회 안내</p></div>
+    <div class="info-grid">
+      <div class="info-item reveal-item"><div class="num">01</div><div class="key">DATE & TIME</div><div class="value">2026년 12월 18일 (금)</div><div class="sub">오후 5시</div></div>
+      <div class="info-item reveal-item"><div class="num">02</div><div class="key">VENUE</div><div class="value">646테라스</div><div class="sub note">상세 위치 및 안내는 별도 확인 부탁드립니다.</div></div>
+    </div>
+  </div></section>
+  <section class="section rsvp" id="rsvp"><div class="container center">
+    <div class="section-label reveal-item">RESERVATION · RSVP</div>
+    <h2 class="section-title reveal-item">참석 신청</h2>
+    <p class="section-copy reveal-item">소중한 자리에 함께해 주실지 알려주세요.</p>
+    <button type="button" class="outline-button rsvp-open-button reveal-item" data-open-rsvp>참석 신청하기 &nbsp; ↗</button>
+  </div></section>
+  <section class="section closing"><div class="container center">
+    <div class="ornament reveal-item">✧</div><div class="section-label reveal-item">WE LOOK FORWARD TO SEEING YOU</div>
+    <h2 class="closing-title reveal-item">함께해 주시는 순간이<br>더욱 빛나는 저녁이 되기를.</h2>
+    <p class="closing-copy reveal-item">2026 공공협력원 송년회에서 뵙겠습니다.</p>
+    <a class="outline-button reveal-item" href="#top" aria-label="초대장 처음으로 돌아가기">BACK TO TOP ↑</a>
+  </div></section>
+  <footer>© 2026 공공협력원 · YEAR-END INVITATION</footer>
+</main>
+
+<button class="rsvp-float" id="floatingRsvp" type="button" data-open-rsvp aria-haspopup="dialog" aria-controls="rsvpModal" aria-label="참석 신청 창 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM7 9h10M7 13h6M7 17h9"/></svg>참석 신청 <span aria-hidden="true">↗</span></button>
+<div class="rsvp-modal" id="rsvpModal" hidden>
+  <div class="rsvp-dialog" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle" tabindex="-1">
+    <button type="button" class="rsvp-close" id="closeRsvp" aria-label="신청 창 닫기">×</button>
+    <span class="modal-eyebrow">2026 YEAR-END GALA · RSVP</span>
+    <h2 id="rsvpModalTitle">참석 신청</h2>
+    <div class="rsvp-card">
+      <div class="rsvp-preview" id="rsvpPreview">현재는 신청 화면 미리보기입니다.<br>실제 접수는 수신 서비스 연결 후 가능합니다.</div>
+      <form id="rsvpForm" autocomplete="on">
+        <div class="rsvp-field"><label for="guestName">성함 <span aria-hidden="true">*</span></label><input id="guestName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="성함을 입력해 주세요" required /></div>
+        <div class="rsvp-field"><label for="guestAffiliation">소속 <span style="font-size:11px;color:#b6a489">(선택)</span></label><input id="guestAffiliation" name="affiliation" type="text" autocomplete="organization" maxlength="120" placeholder="소속을 입력해 주세요" /></div>
+        <div class="rsvp-field"><label for="guestPhone">연락처 <span aria-hidden="true">*</span></label><input id="guestPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="연락 가능한 번호를 입력해 주세요" required /></div>
+        <input type="hidden" name="attendance" value="참석" />
+        <div class="rsvp-field" id="companionSection">
+          <label for="companionCount">동반인 수 <span style="font-size:11px;color:#b6a489;letter-spacing:0">(신청자 본인 제외)</span></label>
+          <select id="companionCount" name="companion_count">
+            <option value="0">동반인 없음 (본인 1명)</option>
+            <option value="1">1명 (총 2명)</option>
+            <option value="2">2명 (총 3명)</option>
+            <option value="3">3명 (총 4명)</option>
+            <option value="4">4명 (총 5명)</option>
+            <option value="5">5명 (총 6명)</option>
+            <option value="6">6명 (총 7명)</option>
+            <option value="7">7명 (총 8명)</option>
+            <option value="8">8명 (총 9명)</option>
+            <option value="9">9명 (총 10명)</option>
+          </select>
+          <div class="rsvp-companion-fields" id="companionFields" aria-live="polite"></div>
+        </div>
+        <div class="rsvp-privacy">입력하신 신청자 성함·연락처와 선택 입력한 소속·동반인 정보는 행사 참석 확인을 위해 사용됩니다. 실제 접수 기능 연결 시 개인정보 안내와 관리 방침을 확인해 주세요.</div>
+        <button class="rsvp-submit" id="rsvpSubmit" type="submit">참석 신청하기</button>
+        <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></div>
+      </form>
+      <p class="rsvp-note">2026년 12월 18일 (금) · 오후 5시 · 646테라스</p>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+(function(){
+  const openBtn=document.getElementById('openEnvelope'), intro=document.getElementById('intro'), site=document.getElementById('site');
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let opened=false;
+  function enter(){
+    if(opened)return;opened=true;openBtn.classList.add('open');openBtn.disabled=true;
+    window.setTimeout(()=>{
+      intro.classList.add('done');site.classList.add('ready');site.setAttribute('aria-hidden','false');document.getElementById('floatingRsvp').classList.add('show');
+      document.body.style.overflow='';
+      if(!reduced && window.gsap){
+        gsap.fromTo('.hero .reveal',{autoAlpha:0,y:30,filter:'blur(8px)'},{autoAlpha:1,y:0,filter:'blur(0px)',duration:1.25,stagger:.16,ease:'power3.out',delay:.12});
+        initScroll();
+      } else {document.body.classList.add('fallback')}
+    },reduced?60:1750);
+  }
+  document.body.style.overflow='hidden';openBtn.addEventListener('click',enter);
+  const p=document.getElementById('sparkles');
+  for(let i=0;i<45;i++){
+    const s=document.createElement('i');s.className='particle';let size=(Math.random()*2.5+.7).toFixed(1);
+    Object.assign(s.style,{width:size+'px',height:size+'px',left:Math.random()*100+'%',top:Math.random()*100+'%',opacity:(Math.random()*.38+.12).toFixed(2)});p.appendChild(s);
+  }
+  function initScroll(){
+    if(!window.ScrollTrigger){document.body.classList.add('fallback');return;}
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal-item').forEach((el)=>gsap.fromTo(el,{opacity:0,y:45},{opacity:1,y:0,duration:1,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
+    gsap.to('.hero-content',{y:140,opacity:.16,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.utils.toArray('.particle').forEach((el,i)=>gsap.to(el,{y:-(70+i%7*20),x:(i%2?-1:1)*20,duration:4+i%6,repeat:-1,yoyo:true,ease:'sine.inOut',delay:i%9*.2}));
+  }
+
+  const modal=document.getElementById('rsvpModal');
+  const dialog=modal.querySelector('.rsvp-dialog');
+  const closeModalBtn=document.getElementById('closeRsvp');
+  let previousFocus=null;
+  function openRsvp(){
+    if(!intro.classList.contains('done'))return;
+    previousFocus=document.activeElement;
+    modal.hidden=false;
+    document.body.classList.add('modal-open');
+    closeModalBtn.focus();
+  }
+  function closeRsvp(){
+    modal.hidden=true;document.body.classList.remove('modal-open');
+    if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();
+  }
+  document.querySelectorAll('[data-open-rsvp]').forEach(btn=>btn.addEventListener('click',openRsvp));
+  closeModalBtn.addEventListener('click',closeRsvp);
+  modal.addEventListener('click',e=>{if(e.target===modal)closeRsvp()});
+  document.addEventListener('keydown',e=>{
+    if(modal.hidden)return;
+    if(e.key==='Escape'){closeRsvp();return;}
+    if(e.key==='Tab'){
+      const focusable=[...dialog.querySelectorAll('button:not([disabled]),input:not([disabled]),a[href]')].filter(el=>el.getClientRects().length);
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+  });
+  // GitHub Pages is static. Set a real Formspree form ID to enable submissions.
+  // Example: const RSVP_ENDPOINT='https://formspree.io/f/xxxxxxxx';
+  const RSVP_ENDPOINT='';
+  const rsvpForm=document.getElementById('rsvpForm');
+  const rsvpStatus=document.getElementById('rsvpStatus');
+  const rsvpSubmit=document.getElementById('rsvpSubmit');
+  const companionSection=document.getElementById('companionSection');
+  const companionCount=document.getElementById('companionCount');
+  const companionFields=document.getElementById('companionFields');
+  function refreshCompanions(){
+    const count=Number(companionCount.value);
+    const existing={};
+    companionFields.querySelectorAll('input').forEach(input=>{existing[input.name]=input.value});
+    companionFields.replaceChildren();
+    for(let i=1;i<=count;i++){
+      const group=document.createElement('fieldset');
+      group.className='companion-group';
+      const legend=document.createElement('legend');
+      legend.textContent='동반인 '+i;
+      group.appendChild(legend);
+      const specs=[
+        {key:'name',label:'성함',type:'text',autocomplete:'off',max:80,placeholder:'동반인 성함을 입력해 주세요'},
+        {key:'affiliation',label:'소속',type:'text',autocomplete:'off',max:120,placeholder:'동반인 소속을 입력해 주세요'}
+      ];
+      specs.forEach(spec=>{
+        const wrapper=document.createElement('div');
+        const label=document.createElement('label');
+        const input=document.createElement('input');
+        const key='companion_'+i+'_'+spec.key;
+        input.type=spec.type;input.name=key;input.id=key;
+        input.maxLength=spec.max;input.placeholder=spec.placeholder;input.required=spec.key==='name';
+        input.autocomplete=spec.autocomplete;
+        if(spec.key==='phone')input.inputMode='tel';
+        input.value=existing[key]||'';
+        label.htmlFor=key;label.textContent=spec.label+(spec.key==='name'?' *':' (선택)');
+        wrapper.append(label,input);group.appendChild(wrapper);
+      });
+      companionFields.appendChild(group);
+    }
+  }
+  companionCount.addEventListener('change',refreshCompanions);
+  refreshCompanions();
+  if(RSVP_ENDPOINT){document.getElementById('rsvpPreview').hidden=true}
+  rsvpForm.addEventListener('submit',async (e)=>{
+    e.preventDefault();
+    if(!rsvpForm.reportValidity())return;
+    if(!RSVP_ENDPOINT){rsvpStatus.textContent='현재는 미리보기입니다. 실제 신청을 받으려면 접수 서비스를 연결해야 합니다.';return;}
+    if(!/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(RSVP_ENDPOINT)){
+      rsvpStatus.textContent='접수 주소가 올바르지 않습니다. 관리자에게 문의해 주세요.';return;
+    }
+    rsvpSubmit.disabled=true;rsvpSubmit.textContent='전송 중…';rsvpStatus.textContent='';
+    try{
+      const response=await fetch(RSVP_ENDPOINT,{method:'POST',body:new FormData(rsvpForm),headers:{'Accept':'application/json'}});
+      if(!response.ok)throw new Error('Failed to submit');
+      rsvpStatus.textContent='회신이 정상적으로 접수되었습니다. 감사합니다.';rsvpForm.reset();refreshCompanions();
+    }catch(err){rsvpStatus.textContent='전송하지 못했습니다. 잠시 후 다시 시도해 주세요.'}
+    finally{rsvpSubmit.disabled=false;rsvpSubmit.textContent='참석 신청하기'}
+  });
+  // Offline/CDN fallback: maintain usable content without third-party scripts.
+  window.addEventListener('load',()=>{if(!window.gsap)document.body.classList.add('fallback')});
+})();
+</script>
+</body>
+</html>

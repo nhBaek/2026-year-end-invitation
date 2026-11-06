@@ -233,6 +233,18 @@ body{background:#fbfaff}
  .hero-date { margin-top:25px; }
  .hero-scroll { margin-top:28px; }
 }
+
+/* RSVP error: preserve entered fields, do not automatically re-submit uncertain requests. */
+.rsvp-error-panel[hidden]{display:none!important}
+.rsvp-error-panel{text-align:center;color:#38264c;padding:16px 4px 12px}
+.rsvp-error-symbol{width:54px;height:54px;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;font-size:26px;font-weight:700;color:#a24a91;background:#f7eaf5}
+.rsvp-error-panel h3{font-family:var(--korean-display),'Noto Serif KR',serif;font-size:clamp(21px,5vw,26px);line-height:1.5;margin-bottom:18px}
+.rsvp-error-panel p{color:#675773;font-size:14px;line-height:2;word-break:keep-all}
+.rsvp-error-contact{margin:25px auto 16px;padding:21px 18px;background:#f1eafa;border:1px solid #e4d1f0;border-radius:13px;display:grid;gap:6px}
+.rsvp-error-contact span{font-size:12px;color:#796389}
+.rsvp-error-contact a{font-size:clamp(22px,6vw,28px);font-weight:800;letter-spacing:.015em;color:#51276d;text-decoration:none}
+.rsvp-error-contact a:focus-visible,.rsvp-error-back:focus-visible{outline:3px solid #9134bf;outline-offset:3px}
+.rsvp-error-back{margin-top:8px;padding:13px 24px;border:1px solid #c7a6dc;border-radius:10px;color:#633584;background:transparent;font-size:13px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -324,6 +336,16 @@ body{background:#fbfaff}
         <button class="rsvp-submit" id="rsvpSubmit" type="submit">참석 신청하기</button>
         <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></div>
       </form>
+      <section class="rsvp-error-panel" id="rsvpErrorPanel" role="alert" aria-labelledby="rsvpErrorTitle" hidden tabindex="-1">
+        <div class="rsvp-error-symbol" aria-hidden="true">!</div>
+        <h3 id="rsvpErrorTitle">참석 신청 확인 안내</h3>
+        <p>일시적인 연결 문제로 신청 접수 여부를 확인하지 못했습니다.<br>중복 신청을 방지하기 위해 아래 연락처로 문의해 주시기 바랍니다.</p>
+        <div class="rsvp-error-contact">
+          <span>공공협력원 문의</span>
+          <a href="tel:027771778" aria-label="공공협력원 02-777-1778로 전화하기">02-777-1778</a>
+        </div>
+        <button class="rsvp-error-back" id="rsvpErrorBack" type="button">입력 내용 확인</button>
+      </section>
       <p class="rsvp-note" id="rsvpFootnote">2026년 12월 18일 (금) · 오후 5시 · 646테라스</p>
     </div>
     <section class="payment-panel" id="paymentPanel" aria-labelledby="paymentTitle" hidden tabindex="-1">
@@ -405,7 +427,16 @@ body{background:#fbfaff}
   function resetPaymentView(){
     paymentPanel.hidden=true;
     formCard.hidden=false;
+    rsvpErrorPanel.hidden=true;
+    rsvpForm.hidden=false;
   }
+  rsvpErrorBack.addEventListener('click',()=>{
+    rsvpErrorPanel.hidden=true;
+    rsvpForm.hidden=false;
+    rsvpStatus.textContent='';
+    dialog.scrollTop=0;
+    document.getElementById('guestName').focus({preventScroll:true});
+  });
   document.getElementById('closePayment').addEventListener('click',()=>closeRsvp());
   let previousFocus=null;
   function openRsvp(){
@@ -439,6 +470,8 @@ body{background:#fbfaff}
   const RSVP_ENDPOINT='https://script.google.com/macros/s/AKfycbwnYVx94LtUGESO-gwJnQGyRC9ghUsuv7f67UR35olo4nsxOHteXlQO7jFA2xbKPJei6Q/exec';
   const rsvpForm=document.getElementById('rsvpForm');
   const rsvpStatus=document.getElementById('rsvpStatus');
+  const rsvpErrorPanel=document.getElementById('rsvpErrorPanel');
+  const rsvpErrorBack=document.getElementById('rsvpErrorBack');
   const rsvpSubmit=document.getElementById('rsvpSubmit');
   const companionCount=document.getElementById('companionCount');
   const companionFields=document.getElementById('companionFields');
@@ -534,7 +567,12 @@ body{background:#fbfaff}
       pendingRequestId=null;rsvpForm.reset();refreshCompanions();
       showPayment();
     }catch(err){
-      rsvpStatus.textContent='저장 완료 여부를 확인하지 못했습니다. 담당자에게 확인하거나 잠시 후 다시 눌러주세요. 같은 신청번호로 재시도하므로 중복 저장되지 않습니다.';
+      // A failed receipt check does not prove that storage failed. Do not auto-retry.
+      rsvpStatus.textContent='';
+      rsvpForm.hidden=true;
+      rsvpErrorPanel.hidden=false;
+      dialog.scrollTop=0;
+      rsvpErrorPanel.focus({preventScroll:true});
     }finally{setSubmitting(false);rsvpSubmit.disabled=false;rsvpSubmit.textContent='참석 신청하기'}
   });
   // Offline/CDN fallback: maintain usable content without third-party scripts.

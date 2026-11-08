@@ -449,13 +449,6 @@ body{background:#fbfaff}
     rsvpErrorPanel.hidden=true;
     rsvpForm.hidden=false;
   }
-  rsvpErrorBack.addEventListener('click',()=>{
-    rsvpErrorPanel.hidden=true;
-    rsvpForm.hidden=false;
-    rsvpStatus.textContent='';
-    dialog.scrollTop=0;
-    document.getElementById('guestName').focus({preventScroll:true});
-  });
   document.getElementById('closePayment').addEventListener('click',()=>closeRsvp());
   let previousFocus=null;
   function openRsvp(){
@@ -492,6 +485,13 @@ body{background:#fbfaff}
   const rsvpErrorPanel=document.getElementById('rsvpErrorPanel');
   const rsvpErrorBack=document.getElementById('rsvpErrorBack');
   const rsvpSubmit=document.getElementById('rsvpSubmit');
+  rsvpErrorBack.addEventListener('click',()=>{
+    rsvpErrorPanel.hidden=true;
+    rsvpForm.hidden=false;
+    rsvpStatus.textContent='';
+    dialog.scrollTop=0;
+    document.getElementById('guestName').focus({preventScroll:true});
+  });
   const companionCount=document.getElementById('companionCount');
   const companionFields=document.getElementById('companionFields');
   let pendingRequestId=null;

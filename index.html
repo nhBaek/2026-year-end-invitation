@@ -270,7 +270,7 @@ body{background:#fbfaff}
       <span class="env-left"></span><span class="env-right"></span><span class="env-bottom"></span><span class="env-flap"></span><span class="seal">✦</span>
     </span>
   </button>
-  <div class="intro-hint">TAP TO UNFOLD THE NIGHT</div>
+  <div class="intro-hint">OPENING SOON · TAP TO OPEN NOW</div>
 </div>
 <main id="site" aria-hidden="true">
   <header><div class="brand">공공협력원</div><div class="header-right">2026 · PRIVATE INVITATION</div></header>
@@ -280,8 +280,8 @@ body{background:#fbfaff}
     <div class="hero-content">
       <div class="hero-topline reveal">2026 &nbsp; • &nbsp; INSTITUTE OF PUBLIC COLLABORATION</div>
       <div class="hero-frame reveal"><span class="frame-top">2026</span><span class="frame-title">공공협력원<br>송년회</span><span class="frame-bottom">S-DAY</span></div>
-      <p class="hero-script reveal">Together We<br>Shining Night</p>
-      <p class="hero-tagline reveal">함께 빛나는 같이 빛내는<br>우리들의 밤</p>
+      <p class="hero-script reveal">Together,<br>Shining Night</p>
+      <p class="hero-tagline reveal">함께 빛나는 우리들의 밤</p>
       <div class="hero-date reveal"><b>2026년 12월 18일 (금) · 17:00</b><br><span class="hero-venue">646테라스</span><span class="hero-address">서울시 강남구 논현동 646 6층</span></div>
       <div class="hero-scroll">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></div>
     </div>
@@ -303,7 +303,7 @@ body{background:#fbfaff}
   <section class="section support-section" id="sponsorship" aria-labelledby="supportTitle"><div class="container center">
     <div class="support-eyebrow reveal-item">TOGETHER, WE SHINE</div>
     <h2 class="support-title reveal-item" id="supportTitle">함께 나누는 마음</h2>
-    <p class="support-copy reveal-item">따뜻한 나눔으로 더욱 빛나는 밤을 만들어 갑니다.<br>송년회 후원 및 협찬에 관심 있는 분들의 연락을 기다립니다.</p>
+    <p class="support-copy reveal-item">따뜻한 나눔으로 더욱 빛나는 밤을 만들어 갑니다.<br>뜻깊은 자리를 함께 만들어 주실 후원 및 물품 협찬을 기다립니다.</p>
     <span class="support-contact-label reveal-item">후원 및 협찬 문의</span>
     <a class="support-contact reveal-item" href="tel:027771778" aria-label="공공협력원 후원 및 협찬 문의 02-777-1778로 전화하기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L9.06 10.9a16 16 0 0 0 4.04 4.04l1.26-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>02-777-1778</a>
   </div></section>
@@ -410,6 +410,9 @@ body{background:#fbfaff}
     },reduced?60:1750);
   }
   document.body.style.overflow='hidden';openBtn.addEventListener('click',enter);
+  // Begin opening immediately on page load; manual clicks remain available.
+  // enter() prevents duplicate opening.
+  window.setTimeout(enter, 0);
   const p=document.getElementById('sparkles');
   for(let i=0;i<0;i++){
     const s=document.createElement('i');s.className='particle';let size=(Math.random()*2.5+.7).toFixed(1);

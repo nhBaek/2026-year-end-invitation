@@ -338,7 +338,7 @@ body{background:#fbfaff}
       <form id="rsvpForm" autocomplete="on">
         <div class="rsvp-field"><label for="guestName">성함 <span aria-hidden="true">*</span></label><input id="guestName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="성함을 입력해 주세요" required /></div>
         <div class="rsvp-field"><label for="guestAffiliation">소속 <span style="font-size:11px;color:#b6a489">(선택)</span></label><input id="guestAffiliation" name="affiliation" type="text" autocomplete="organization" maxlength="120" placeholder="소속을 입력해 주세요" /></div>
-        <div class="rsvp-field"><label for="guestPhone">연락처 <span aria-hidden="true">*</span></label><input id="guestPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="연락 가능한 번호를 입력해 주세요" required /></div>
+        <div class="rsvp-field"><label for="guestPhone">연락처 <span aria-hidden="true">*</span></label><input id="guestPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="010-0000-0000" required /></div>
         <input type="hidden" name="attendance" value="참석" />
         <div class="rsvp-field" id="companionSection">
           <label for="companionCount">동반인 수 <span style="font-size:11px;color:#b6a489;letter-spacing:0">(신청자 본인 제외)</span></label>
@@ -494,6 +494,45 @@ body{background:#fbfaff}
   const rsvpErrorPanel=document.getElementById('rsvpErrorPanel');
   const rsvpErrorBack=document.getElementById('rsvpErrorBack');
   const rsvpSubmit=document.getElementById('rsvpSubmit');
+  const guestPhone=document.getElementById('guestPhone');
+  // Format Korean mobile numbers as the visitor types, without changing other number formats.
+  function formatPhone(value){
+    const digits=value.replace(/\D/g,'');
+    if(!/^010/.test(digits))return value;
+    const n=digits.slice(0,11);
+    if(n.length<=3)return n;
+    if(n.length<=7)return n.slice(0,3)+'-'+n.slice(3);
+    return n.slice(0,3)+'-'+n.slice(3,7)+'-'+n.slice(7);
+  }
+  guestPhone.addEventListener('input',()=>{
+    const before=guestPhone.value;
+    const formatted=formatPhone(before);
+    if(before!==formatted)guestPhone.value=formatted;
+  });
+  function phoneError(){
+    const value=guestPhone.value.trim();
+    if(!value)return '연락처를 입력해 주세요.';
+    const digits=value.replace(/\D/g,'');
+    if(/^010/.test(digits)&&digits.length!==11)return '휴대전화 번호 11자리를 확인해 주세요. (예: 010-1234-5678)';
+    if(!/^[+0-9()\s-]{8,30}$/.test(value))return '연락처 형식을 확인해 주세요. (예: 010-1234-5678)';
+    return '';
+  }
+  function showInputError(message,field){
+    rsvpStatus.textContent=message;
+    rsvpStatus.setAttribute('role','alert');
+    if(field){field.focus();field.scrollIntoView({block:'center',behavior:'smooth'});}
+  }
+  // Native required-field validation prevents the submit event from firing.
+  // Explain why the form cannot proceed, including dynamically added companions.
+  rsvpForm.addEventListener('invalid',e=>{
+    const field=e.target;
+    if(field===guestPhone){showInputError(phoneError()||'연락처 형식을 확인해 주세요.',field);return;}
+    const isCompanion=field.name&&field.name.startsWith('companion_');
+    showInputError(isCompanion?'동반인 성함을 입력해 주세요.':'필수 항목인 성함과 연락처를 확인해 주세요.',field);
+  },true);
+  rsvpForm.addEventListener('input',()=>{
+    if(!isSubmitting&&rsvpStatus.textContent&&!rsvpStatus.textContent.includes('전송'))rsvpStatus.textContent='';
+  });
   rsvpErrorBack.addEventListener('click',()=>{
     rsvpErrorPanel.hidden=true;
     rsvpForm.hidden=false;
@@ -558,10 +597,9 @@ body{background:#fbfaff}
   rsvpForm.addEventListener('submit',async e=>{
     e.preventDefault();
     if(isSubmitting||!rsvpForm.reportValidity())return;
-    const phone=document.getElementById('guestPhone').value.trim();
-    if(!/^[+0-9()\s-]{8,30}$/.test(phone)){
-      rsvpStatus.textContent='연락처는 숫자와 하이픈 등으로 입력해 주세요.';return;
-    }
+    const phone=guestPhone.value.trim();
+    const phoneProblem=phoneError();
+    if(phoneProblem){showInputError(phoneProblem,guestPhone);return;}
     // A retry keeps the same request id to prevent duplicate records.
     pendingRequestId=pendingRequestId||makeId();
     const companions=[];

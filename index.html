@@ -257,6 +257,11 @@ body{background:#fbfaff}
 .support-section .support-contact:hover,.support-section .support-contact:focus-visible{color:#b22cba;border-color:#b22cba;transform:translateY(-2px)}
 .support-section .support-contact svg{height:22px;width:22px;flex:none}
 @media(max-width:600px){.support-section{padding:78px 22px}.support-section .support-copy{font-size:14px}}
+
+/* Optional message field — matches the existing RSVP input styling. */
+.rsvp-field textarea{width:100%;min-height:104px;resize:vertical;border:1px solid rgba(169,143,186,.35);border-radius:10px;background:#fff;color:#392c43;padding:13px 15px;font:inherit;font-size:14px;line-height:1.65;outline:none;box-sizing:border-box}
+.rsvp-field textarea:focus{border-color:#a56ac2;box-shadow:0 0 0 3px rgba(165,106,194,.12)}
+.rsvp-field textarea::placeholder{color:#a99aaa}
 </style>
 </head>
 <body>
@@ -351,6 +356,7 @@ body{background:#fbfaff}
           </select>
           <div class="rsvp-companion-fields" id="companionFields" aria-live="polite"></div>
         </div>
+        <div class="rsvp-field"><label for="guestMessage">사무국에 남기실 말씀 <span style="font-size:11px;color:#b6a489">(선택)</span></label><textarea id="guestMessage" name="message" maxlength="500" rows="3" placeholder="행사 참석과 관련해 전달하실 말씀이 있으시면 남겨 주세요."></textarea></div>
         <div class="rsvp-privacy">참석 신청 정보는 행사 참석 확인 및 운영을 위해 사용됩니다.</div>
         <button class="rsvp-submit" id="rsvpSubmit" type="submit">참석 신청하기</button>
         <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></div>
@@ -569,7 +575,8 @@ body{background:#fbfaff}
       requestId:pendingRequestId,
       name:document.getElementById('guestName').value.trim(),
       organization:document.getElementById('guestAffiliation').value.trim(),
-      phone,companions
+      phone,companions,
+      message:document.getElementById('guestMessage').value.trim()
     };
     setSubmitting(true);
     rsvpSubmit.disabled=true;rsvpSubmit.textContent='접수 중…';

@@ -338,6 +338,7 @@ body{background:#fbfaff}
       <form id="rsvpForm" autocomplete="on">
         <div class="rsvp-field"><label for="guestName">성함 <span aria-hidden="true">*</span></label><input id="guestName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="성함을 입력해 주세요" required /></div>
         <div class="rsvp-field"><label for="guestAffiliation">소속 <span style="font-size:11px;color:#b6a489">(선택)</span></label><input id="guestAffiliation" name="affiliation" type="text" autocomplete="organization" maxlength="120" placeholder="소속을 입력해 주세요" /></div>
+        <div class="rsvp-field"><label for="guestReferrer">추천인 <span style="font-size:11px;color:#b6a489">(선택)</span></label><input id="guestReferrer" name="referrer" type="text" maxlength="80" placeholder="추천해 주신 분의 성함을 입력해 주세요" /></div>
         <div class="rsvp-field"><label for="guestPhone">연락처 <span aria-hidden="true">*</span></label><input id="guestPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="010-0000-0000" required /></div>
         <input type="hidden" name="attendance" value="참석" />
         <div class="rsvp-field" id="companionSection">
@@ -613,6 +614,7 @@ body{background:#fbfaff}
       requestId:pendingRequestId,
       name:document.getElementById('guestName').value.trim(),
       organization:document.getElementById('guestAffiliation').value.trim(),
+      referrer:document.getElementById('guestReferrer').value.trim(),
       phone,companions,
       message:document.getElementById('guestMessage').value.trim()
     };
